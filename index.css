@@ -462,11 +462,6 @@ partie gauche
 	font-weight: bold;
 }
 
-@media (max-width: 700px) {
-	.grille_cartes {
-		grid-template-columns: 1fr;
-	}
-}
 
 /*SECTION COMPETENCES*/
 
@@ -483,17 +478,6 @@ partie gauche
     align-items: stretch; /* toutes les cartes prennent la même hauteur */
 }
 
-@media (max-width: 900px) {
-    .conteneur_comp {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .conteneur_comp {
-        grid-template-columns: 1fr;
-    }
-}
 
 /* ===== Fond général ===== */
 #Competences {
@@ -537,17 +521,6 @@ partie gauche
 	top: -100px;
 }
 
-@media (max-width: 900px) {
-    .conteneur_comp {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .conteneur_comp {
-        grid-template-columns: 1fr;
-    }
-}
 
 /* ===== Style commun aux 4 cartes ===== */
 .carte_prog,
@@ -897,21 +870,11 @@ partie gauche
   box-shadow: none;
 }
 
-/* ================= RESPONSIVE ================= */
-@media (max-width: 750px) {
-  .conteneur_projet {
-    grid-template-columns: 1fr;
-  }
-  .projet_1, .type_projet_1 { grid-column: 1; grid-row: 1; }
-  .projet_2, .type_projet_2 { grid-column: 1; grid-row: 2; }
-  .projet_3, .type_projet_3 { grid-column: 1; grid-row: 3; }
-  .projet_4, .type_projet_4 { grid-column: 1; grid-row: 4; }
-}
 
 /* ==================== FORMATION & CURSUS ==================== */
 
 #formation {
-  background-imag:url('./img/bg.png');
+  background-image:url('./img/bg.png');
   padding: 60px 40px;
   font-family: 'Courier New', monospace;
   margin-top: 100px;
@@ -977,9 +940,9 @@ partie gauche
   height: 100%;
 }
 
-.icon_vert  { color: #00ff88; }
-.icon_cyan  { color: #00cfff; }
-.icon_violet{ color: #a78bfa; }
+.icon_vert   { color: #00ff88; }
+.icon_cyan   { color: #00cfff; }
+.icon_violet { color: #a78bfa; }
 
 .formation_contenu {
   flex: 1;
@@ -1503,14 +1466,6 @@ partie gauche
   transform: translateY(-2px);
 }
 
-/* Responsive */
-@media (max-width: 850px) {
-  .contact_grille {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-}
-
 
 /* ==================== FOOTER ==================== */
 
@@ -1545,12 +1500,6 @@ partie gauche
 .highlight_vert { color: #00ff88; font-weight: 600; }
 .highlight_cyan { color: #00cfff; font-weight: 600; }
 
-@media (max-width: 700px) {
-  .footer_section {
-    flex-direction: column;
-    text-align: center;
-  }
-}
 
 .ecran_bloque {
   display: none;
@@ -1602,4 +1551,229 @@ partie gauche
 /* Cache le contenu principal quand le blocage est actif */
 body.ecran_trop_petit > *:not(#ecran_bloque) {
   display: none !important;
+}
+
+
+/* ===================================================
+   ===== NOUVELLE PARTE RESPONSIVE & MOBILE =====
+   =================================================== */
+
+/* Écrans intermédiaires et tablettes (Max 1250px) */
+@media (max-width: 1250px) {
+	.about_right {
+		position: static;
+		margin-top: 40px;
+		max-width: 100%;
+	}
+	.about_left {
+		position: static;
+		max-width: 100%;
+	}
+	.titre {
+		position: static;
+		text-align: center;
+		margin-bottom: 20px;
+	}
+	.titre::after {
+		margin: 10px auto 0 auto;
+	}
+	#formation, #xp, #certification, .contact_section {
+		margin-left: 0 !important;
+		padding: 40px 20px;
+	}
+}
+
+/* Tablettes standard (Max 990px) */
+@media (max-width: 990px) {
+	.about {
+		flex-direction: column-reverse;
+		text-align: center;
+		padding: 120px 20px 40px 20px;
+		margin-top: 50px;
+	}
+	.left_about {
+		padding-left: 0;
+		align-items: center;
+	}
+	.rigth_about {
+		margin-right: 0;
+		margin-bottom: 40px;
+	}
+	.ligne_nom {
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+	.conteneur_about {
+		flex-direction: column;
+		padding-top: 50px;
+		align-items: center;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	.conteneur_comp {
+		grid-template-columns: repeat(2, 1fr) !important;
+		left: 0;
+		right: 0;
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+	.contact_grille {
+		grid-template-columns: 1fr;
+		gap: 40px;
+	}
+}
+
+/* Smartphones et petits écrans (Max 768px) */
+@media (max-width: 768px) {
+	.barre_haute_fixe {
+		position: static;
+		flex-direction: column;
+		padding: 15px;
+	}
+	.identite {
+		border-right: none;
+		padding-right: 0;
+		margin-bottom: 10px;
+	}
+	.nav_element {
+		justify-content: center;
+		width: 100%;
+	}
+	.about {
+		margin-top: 20px;
+	}
+	.nom1, .nom2, .nom3, .nom4 {
+		font-size: 32px;
+	}
+	.photo_landry {
+		width: 220px;
+		height: 220px;
+	}
+	.text_haut, .text_bas {
+		position: static;
+		margin: 10px 0;
+		display: inline-block;
+	}
+	.grille_cartes {
+		grid-template-columns: 1fr;
+	}
+	.conteneur_comp {
+		grid-template-columns: 1fr !important;
+	}
+	.conteneur_projet {
+		grid-template-columns: 1fr;
+		padding: 20px;
+	}
+	.projet_1, .projet_2, .projet_3, .projet_4 {
+		grid-column: 1 !important;
+		grid-row: auto !important;
+		height: auto;
+	}
+	.type_projet_1, .type_projet_2, .type_projet_3, .type_projet_4 {
+		grid-column: 1 !important;
+		grid-row: auto !important;
+		margin: 10px 0;
+		display: inline-block;
+		width: fit-content;
+	}
+	.formation_item {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+	.formation_top, .experience_header {
+		flex-direction: column;
+		align-items: center;
+	}
+	.formation_meta, .experience_meta {
+		align-items: center;
+		text-align: center;
+	}
+	.certification_grille {
+		grid-template-columns: 1fr;
+	}
+	.footer_section {
+		flex-direction: column;
+		text-align: center;
+	}
+}
+/* ===================================================
+   =====        SYSTÈME DE MENU HAMBURGER        =====
+   =================================================== */
+
+/* Version Ordinateur : On s'assure que tout est normal */
+.barre_haute_fixe {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Mode Mobile / Petit Écran (Déclenchement sous 990px pour éviter les chevauchements) */
+@media (max-width: 990px) {
+
+    /* 1. On force la barre à rester sur une seule ligne et à espacer le logo du burger */
+    .barre_haute_fixe {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 15px 25px !important;
+    }
+
+    /* 2. Création visuelle du bouton Hamburger (3 lignes) via le clic sur la navbar */
+    .barre_haute_fixe::after {
+        content: "";
+        display: block;
+        width: 28px;
+        height: 3px;
+        background: #00ff88; /* Ligne du milieu */
+        box-shadow: 0 -8px 0 #00ff88, 0 8px 0 #00ff88; /* Lignes du haut et du bas */
+        cursor: pointer;
+        transition: 0.3s ease;
+        z-index: 1010;
+    }
+
+    /* 3. Comportement du menu déroulant (Caché par défaut à droite) */
+    .nav_element {
+        display: none; /* Masqué initialement */
+        flex-direction: column !important;
+        justify-content: center;
+        align-items: center;
+        gap: 20px !important;
+        
+        /* Positionnement en plein écran */
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 280px; /* Largeur du tiroir */
+        height: 100vh;
+        background: rgba(10, 15, 20, 0.98);
+        border-left: 2px solid #00ff88;
+        padding: 80px 20px;
+        box-sizing: border-box;
+        z-index: 1005;
+    }
+
+    /* Style des liens dans le menu mobile */
+    .nav_element a {
+        font-size: 16px;
+        width: 100%;
+        text-align: center;
+        padding: 12px 0;
+        display: block;
+    }
+
+    /* 4. OUVERTURE DU MENU AU SURVOL/CLIC (Astuce CSS sans toucher au HTML) */
+    /* Quand l'utilisateur passe la souris ou clique (sur mobile) sur la navbar, le menu s'affiche */
+    .barre_haute_fixe:hover .nav_element {
+        display: flex;
+    }
+
+    /* Changement de couleur du burger au survol pour indiquer qu'il est cliquable */
+    .barre_haute_fixe:hover::after {
+        background: white;
+        box-shadow: 0 -8px 0 white, 0 8px 0 white;
+    }
 }
