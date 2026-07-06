@@ -7,12 +7,6 @@
 <link rel="stylesheet" href="index.css">
 </head>
 <body>
-<div id="ecran_bloque" class="ecran_bloque">
-  <div class="bloque_contenu">
-    <p>Ce portfolio n'est pas encore responsive.<br>
-    Merci de le consulter sur un ordinateur ou une tablette en mode paysage.</p>
-  </div>
-</div>
 <nav class='barre_haute_fixe'>
 	<div class="identite">
 		<img src="./img/logo.png" alt="Logo" height="30" class="logo">
@@ -682,24 +676,6 @@ function downloadPDF() {
     // Ouvre le fichier PDF dans un nouvel onglet
     window.open('cv.pdf', '_blank');
 }
-function verifierTailleEcran() {
-  const largeurMin = 1024; // seuil en pixels, modifiable
-  const ecranBloque = document.getElementById('ecran_bloque');
-
-  if (window.innerWidth < largeurMin) {
-    document.body.classList.add('ecran_trop_petit');
-    ecranBloque.style.display = 'flex';
-  } else {
-    document.body.classList.remove('ecran_trop_petit');
-    ecranBloque.style.display = 'none';
-  }
-}
-
-// Vérifie au chargement
-verifierTailleEcran();
-
-// Vérifie à chaque redimensionnement de fenêtre
-window.addEventListener('resize', verifierTailleEcran);
 </script>
 </body>
 </html>
