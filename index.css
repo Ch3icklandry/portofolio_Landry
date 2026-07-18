@@ -14,6 +14,21 @@ body{
 	margin: 0;
 }
 
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+}
+
+html, body {
+	overflow-x: hidden;
+	width: 100%;
+	max-width: 100%;
+}
+
 .logo{
 	border-radius: 20px;
 }
@@ -117,15 +132,18 @@ partie gauche
 .about {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
 	color: white;
 	font-family: 'Monaco Personnalisee', monospace;
 	padding: 100px 60px 60px 60px;
-	gap: 40px;
+	gap: 100px;
 	margin-top: 150px;
 	padding-bottom: 75px;
+	max-width: 1300px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 
@@ -133,7 +151,6 @@ partie gauche
 	display: flex;
 	flex-direction: column;
 	max-width: 600px;
-	padding-left: 350px;
 }
 
 .intro {
@@ -254,7 +271,6 @@ partie gauche
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	margin-right: 440px;
 }
 
 .photo_landry {
@@ -303,14 +319,17 @@ partie gauche
 	
 }*/
 
+#about{
+	margin-bottom:100px;
+}
 .titre {
 	color: white;
 	font-size: 36px;
 	font-weight: bold;
 	font-family: 'Monaco Personnalisee', monospace;
-	padding-left: -70px;
-	position:relative;
-	left : -100px;
+	position: relative;
+	left: 360px;
+	top: 300px;
 }
 
 .titre::after {
@@ -324,12 +343,25 @@ partie gauche
 	padding-left: -70px;
 }
 
+.about_flex {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 60px;
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 200px 40px 0 40px;
+	box-sizing: border-box;
+}
+
 .conteneur_about {
 	display: flex;
-	justify-content: center;
-	/*margin-left: 250px;
-	margin-right: 250px;*/
-	padding-top: 200px;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+	bottom: -150px;
+	margin-bottom: 100px;
 }
 
 .about_left {
@@ -343,9 +375,6 @@ partie gauche
 	max-width: 600px;
 	width: 100%;
 	box-shadow: 0 0 30px rgba(0, 255, 136, 0.05);
-	position: relative;
-	top:130px;
-	left : -290px;
 }
 
 .barre_fenetre {
@@ -405,9 +434,9 @@ partie gauche
 	color: #999;
 	font-family: 'Monaco Personnalisee', monospace;
 	max-width: 550px;
+	margin-bottom: 100px;
 	position: relative;
-	top: -330px;
-	right: -1100px;
+	top:140px;
 }
 
 .paragraphe {
@@ -467,11 +496,12 @@ partie gauche
 
 /* ===== Grille des cartes : même hauteur, alignées ===== */
 .conteneur_comp {
-	position: relative;
-    /*max-width: 1200px;*/
     margin-top: 100px;
-	margin-right:150px;
-	margin-left:150px;
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 40px;
+    box-sizing: border-box;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 24px;
@@ -508,20 +538,6 @@ partie gauche
 	border-radius: 2px;
 	padding-left: -70px;
 }
-/* ===== Grille des 4 cartes ===== */
-.conteneur_comp {
-	max-width: 1500px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 24px;
-    align-items: stretch;
-	position: relative;
-	left: 50px;
-	right:50px;
-	top: -100px;
-}
-
-
 /* ===== Style commun aux 4 cartes ===== */
 .carte_prog,
 .carte_dev,
@@ -534,6 +550,8 @@ partie gauche
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
+	position: relative;
+	top: -100px;
 }
 
 /* ===== Titre + icône (commun) ===== */
@@ -712,7 +730,7 @@ partie gauche
     margin-left: auto;
     margin-right: auto;
 	position: relative;
-	top: -100px;
+	top: -50px;
 	font-size: 36px;
 	font-weight: bold;
 	color: white;
@@ -751,7 +769,7 @@ partie gauche
   line-height: 1.7;
   font-size: 14px;
   overflow: hidden;
-  height:350px;
+  height:auto;
   transition: border-color 0.3s ease, box-shadow 0.4s ease, transform 0.3s ease;
 }
 
@@ -878,7 +896,9 @@ partie gauche
   padding: 60px 40px;
   font-family: 'Courier New', monospace;
   margin-top: 100px;
-  margin-left: 400px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .formation_titre {
@@ -1026,7 +1046,11 @@ partie gauche
   /*position: relative;*/
   background-image: url('./img/bg.png');
   margin-top: 100px;
-  margin-left: 400px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 40px;
+  box-sizing: border-box;
   font-family: 'Courier New', monospace;
 }
 
@@ -1174,7 +1198,9 @@ partie gauche
   background-image:url('img/bg.png');
   padding: 60px 40px;
   font-family: 'Courier New', monospace;
-  margin-left: 350px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .certification_titre {
@@ -1314,7 +1340,9 @@ partie gauche
 .contact_section {
   background: url('img/bg.png');
   padding: 60px 40px;
-  margin-left:350px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
   font-family: 'Courier New', monospace;
 }
 
@@ -1408,7 +1436,7 @@ partie gauche
 
 .champ_groupe {
   margin-bottom: 22px;
-	width: 450px;
+  width: 100%;
 }
 
 .champ_groupe label {
@@ -1549,10 +1577,6 @@ partie gauche
   font-weight: 700;
 }
 
-/* Cache le contenu principal quand le blocage est actif */
-body.ecran_trop_petit > *:not(#ecran_bloque) {
-  display: none !important;
-}
 
 
 /* ===================================================
@@ -1573,13 +1597,13 @@ body.ecran_trop_petit > *:not(#ecran_bloque) {
 	.titre {
 		position: static;
 		text-align: center;
-		margin-bottom: 20px;
+		margin-top:100px;
+		margin-bottom:-300px;
 	}
 	.titre::after {
 		margin: 10px auto 0 auto;
 	}
 	#formation, #xp, #certification, .contact_section {
-		margin-left: 0 !important;
 		padding: 40px 20px;
 	}
 }
@@ -1626,20 +1650,6 @@ body.ecran_trop_petit > *:not(#ecran_bloque) {
 
 /* Smartphones et petits écrans (Max 768px) */
 @media (max-width: 768px) {
-	.barre_haute_fixe {
-		position: static;
-		flex-direction: column;
-		padding: 15px;
-	}
-	.identite {
-		border-right: none;
-		padding-right: 0;
-		margin-bottom: 10px;
-	}
-	.nav_element {
-		justify-content: center;
-		width: 100%;
-	}
 	.about {
 		margin-top: 20px;
 	}
@@ -1698,83 +1708,134 @@ body.ecran_trop_petit > *:not(#ecran_bloque) {
 		text-align: center;
 	}
 }
-/* ===================================================
-   =====        SYSTÈME DE MENU HAMBURGER        =====
-   =================================================== */
+/* ============================================================
+   MENU HAMBURGER — clic/tap uniquement (pas de hover)
+   Actif de la tablette paysage au mobile portrait (<= 1024px)
+   ============================================================ */
 
-/* Version Ordinateur : On s'assure que tout est normal */
 .barre_haute_fixe {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1000;
 }
 
-/* Mode Mobile / Petit Écran (Déclenchement sous 990px pour éviter les chevauchements) */
-@media (max-width: 990px) {
+.menu_burger {
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+	width: 32px;
+	height: 32px;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+	z-index: 1010;
+}
 
-    /* 1. On force la barre à rester sur une seule ligne et à espacer le logo du burger */
-    .barre_haute_fixe {
-        display: flex !important;
-        flex-direction: row !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-        padding: 15px 25px !important;
-    }
+.menu_burger span {
+	display: block;
+	width: 26px;
+	height: 3px;
+	background: #00ff88;
+	border-radius: 2px;
+	transition: transform 0.3s ease, opacity 0.3s ease;
+}
 
-    /* 2. Création visuelle du bouton Hamburger (3 lignes) via le clic sur la navbar */
-    .barre_haute_fixe::after {
-        content: "";
-        display: block;
-        width: 28px;
-        height: 3px;
-        background: #00ff88; /* Ligne du milieu */
-        box-shadow: 0 -8px 0 #00ff88, 0 8px 0 #00ff88; /* Lignes du haut et du bas */
-        cursor: pointer;
-        transition: 0.3s ease;
-        z-index: 1010;
-    }
+.menu_burger.actif span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.menu_burger.actif span:nth-child(2) { opacity: 0; }
+.menu_burger.actif span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-    /* 3. Comportement du menu déroulant (Caché par défaut à droite) */
-    .nav_element {
-        display: none; /* Masqué initialement */
-        flex-direction: column !important;
-        justify-content: center;
-        align-items: center;
-        gap: 20px !important;
-        
-        /* Positionnement en plein écran */
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 280px; /* Largeur du tiroir */
-        height: 100vh;
-        background: rgba(10, 15, 20, 0.98);
-        border-left: 2px solid #00ff88;
-        padding: 80px 20px;
-        box-sizing: border-box;
-        z-index: 1005;
-    }
+@media (max-width: 1024px) {
 
-    /* Style des liens dans le menu mobile */
-    .nav_element a {
-        font-size: 16px;
-        width: 100%;
-        text-align: center;
-        padding: 12px 0;
-        display: block;
-    }
+	.barre_haute_fixe {
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		align-items: center;
+		padding: 15px 20px;
+	}
 
-    /* 4. OUVERTURE DU MENU AU SURVOL/CLIC (Astuce CSS sans toucher au HTML) */
-    /* Quand l'utilisateur passe la souris ou clique (sur mobile) sur la navbar, le menu s'affiche */
-    .barre_haute_fixe:hover .nav_element {
-        display: flex;
-    }
+	.identite {
+		border-right: none;
+		padding-right: 0;
+		margin-bottom: 0;
+	}
 
-    /* Changement de couleur du burger au survol pour indiquer qu'il est cliquable */
-    .barre_haute_fixe:hover::after {
-        background: white;
-        box-shadow: 0 -8px 0 white, 0 8px 0 white;
-    }
+	.menu_burger {
+		display: flex;
+	}
+
+	.nav_element {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 20px;
+
+		position: fixed;
+		top: 0;
+		right: 0;
+		width: 280px;
+		max-width: 80vw;
+		height: 100vh;
+		background: rgba(10, 15, 20, 0.98);
+		border-left: 2px solid #00ff88;
+		padding: 80px 20px;
+		box-sizing: border-box;
+		z-index: 1005;
+
+		transform: translateX(100%);
+		opacity: 0;
+		visibility: hidden;
+		transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s;
+	}
+
+	.nav_element.menu_ouvert {
+		transform: translateX(0);
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.nav_element a {
+		font-size: 16px;
+		width: 100%;
+		text-align: center;
+		padding: 12px 0;
+		display: block;
+	}
+}
+
+/* ============================================================
+   BARRE SUR UNE SEULE LIGNE — tablette paysage / petit laptop
+   (au-dessus du hamburger : 1025px à 1300px, ex. iPad Air 1180px)
+   ============================================================ */
+@media (min-width: 1025px) and (max-width: 1300px) {
+
+	.barre_haute_fixe {
+		padding: 15px 20px;
+		gap: 10px;
+	}
+
+	.identite {
+		padding-right: 15px;
+	}
+
+	.nav_element {
+		flex-wrap: nowrap;
+		gap: 0;
+	}
+
+	.barre_haute_fixe a {
+		padding: 5px 9px;
+		font-size: 0.82rem;
+	}
+
+	/* "Acceuil" masqué pour que le reste tienne sur une ligne */
+	.nav_element a:first-child {
+		display: none;
+	}
 }
