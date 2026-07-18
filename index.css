@@ -1594,6 +1594,12 @@ partie gauche
 		position: static;
 		max-width: 100%;
 	}
+	.carte_prog,
+	.carte_dev,
+	.carte_bdd,
+	.carte_rs {
+		width: auto;
+	}
 	.titre {
 		position: static;
 		text-align: center;
@@ -1646,15 +1652,37 @@ partie gauche
 		grid-template-columns: 1fr;
 		gap: 40px;
 	}
+	.carte_prog,
+	.carte_dev,
+	.carte_bdd,
+	.carte_rs {
+		width: auto;
+	}
 }
 
 /* Smartphones et petits écrans (Max 768px) */
 @media (max-width: 768px) {
-	.about {
-		margin-top: 20px;
+	.left_about{
+		position: relative;
+		top: -100px;
+	}
+	.titre{
+		padding-right:120px;
+	}
+	#about{
+		position:relative;
+		top:-60px;
+		margin-bottom:0px;
+	}
+	.about_left{
+		width:350px;
 	}
 	.nom1, .nom2, .nom3, .nom4 {
 		font-size: 32px;
+	}
+	.titre_projet{
+		position:relative;
+		left:20px;
 	}
 	.photo_landry {
 		width: 220px;
@@ -1670,23 +1698,72 @@ partie gauche
 	}
 	.conteneur_comp {
 		grid-template-columns: 1fr !important;
+		
 	}
+	#Competences{
+		position:relative;
+		top:-200px;
+	}
+	#projet{
+		position:relative;
+		top:-240px;
+	}
+	#xp{
+		position:relative;
+		top:-300px;
+	}
+	#formation{
+		position:relative;
+		top:-300px;
+		padding-bottom:-100px;
+	}
+	#certification{
+		position:relative;
+		top:-300px;
+	}
+	
 	.conteneur_projet {
+		display: grid;
 		grid-template-columns: 1fr;
+		grid-template-areas:
+			"c1"
+			"c2"
+			"c3"
+			"c4";
+		gap: 24px;
 		padding: 20px;
 	}
 	.projet_1, .projet_2, .projet_3, .projet_4 {
-		grid-column: 1 !important;
-		grid-row: auto !important;
+		grid-column: unset !important;
+		grid-row: unset !important;
 		height: auto;
 	}
+	.projet_1 { grid-area: c1; }
+	.projet_2 { grid-area: c2; }
+	.projet_3 { grid-area: c3; }
+	.projet_4 { grid-area: c4; }
 	.type_projet_1, .type_projet_2, .type_projet_3, .type_projet_4 {
-		grid-column: 1 !important;
-		grid-row: auto !important;
-		margin: 10px 0;
-		display: inline-block;
+		grid-column: unset !important;
+		grid-row: unset !important;
+		justify-self: end;
+		align-self: start;
+		margin: 20px 20px 0 0;
 		width: fit-content;
 	}
+	.type_projet_1 { grid-area: projet_1; 
+		position:relative;
+		top:70px;
+		display:none;
+	}
+	.type_projet_2 { grid-area: projet_2; 
+	position:relative;
+		top:70px;display:none;}
+	.type_projet_3 { grid-area: projet_3;
+position:relative;
+		top:70px;	display:none;}
+	.type_projet_4 { grid-area: projet_4; display:none;
+	position:relative;
+		top:70px;}
 	.formation_item {
 		flex-direction: column;
 		align-items: center;
@@ -1706,6 +1783,14 @@ partie gauche
 	.footer_section {
 		flex-direction: column;
 		text-align: center;
+	}
+	.carte_prog,
+	.carte_dev,
+	.carte_bdd,
+	.carte_rs {
+		width:350px;
+		position: relative;
+		left:-60px;
 	}
 }
 /* ============================================================
@@ -1806,6 +1891,47 @@ partie gauche
 		text-align: center;
 		padding: 12px 0;
 		display: block;
+	}
+}
+
+/* ============================================================
+   COHÉRENCE LARGEUR — boîte terminal (À propos) et cartes compétences
+   Même largeur en mode paysage (téléphone / petite tablette)
+   ============================================================ */
+@media (orientation: landscape) and (max-width: 1024px) {
+
+	.about_flex {
+		max-width: 600px;
+		padding-left: 20px;
+		padding-right: 20px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.conteneur_about {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.about_left {
+		max-width: 100%;
+		width: 100%;
+	}
+
+	.conteneur_comp {
+		max-width: 600px;
+		grid-template-columns: 1fr !important;
+		padding-left: 20px;
+		padding-right: 20px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.carte_prog,
+	.carte_dev,
+	.carte_bdd,
+	.carte_rs {
+		width: 100%;
 	}
 }
 
