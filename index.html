@@ -2,7 +2,7 @@
 <html lang='fr'>
 <head>
 <meta charset='UTF-8'>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Portfolio de Landry</title>
 <link rel="stylesheet" href="index.css">
 </head>
@@ -12,6 +12,11 @@
 		<img src="./img/logo.png" alt="Logo" height="30" class="logo">
 		<div class="affich_nom">Landry <span class="anim">_</span></div>
 	</div>
+	<button class="menu_burger" id="menuBurger" aria-label="Ouvrir le menu" aria-expanded="false">
+		<span></span>
+		<span></span>
+		<span></span>
+	</button>
 	<div class="nav_element">
 		<a href="#index">Acceuil</a>
 		<a href="#about">A propos</a>
@@ -73,9 +78,10 @@
 	</div>
 </section>
 <section id="about" class="page-section">
-	
-<div class="conteneur_about">
 <div class="titre">À propos</div>
+<div class="about_flex">
+<div class="conteneur_about">
+
 
 	<div class="about_left">
 		<div class="barre_fenetre">
@@ -138,6 +144,7 @@
 			<div class="valeur_carte">Français, Anglais, Moore,Dioula</div>
 		</div>
 	</div>
+</div>
 </div>
 
 </section>
@@ -405,7 +412,7 @@ mon expertise à travers une interface soignée, des animations fluides et une n
           </div>
           <div class="formation_meta">
             <span class="formation_ecole">Ouagadougou</span>
-            <span class="formation_date cyan">2021 – 2024</span>
+            <span class="formation_date cyan">2021 – 2021</span>
           </div>
         </div>
         <p class="formation_desc">Poursuite du cursus secondaire.</p>
@@ -455,7 +462,7 @@ mon expertise à travers une interface soignée, des animations fluides et une n
 	<!-- passeport numerique -->
 		<div class="certif_card">
       <div class="certif_image">
-        <img src="certificats/cert.png" alt="passeport numerique">
+        <img src="certificats/cert0.png" alt="passeport numerique">
       </div>
       <div class="certif_body">
         <h3 class="certif_nom vert">passeport numerique 10.000 codeurs</h3>
@@ -464,7 +471,7 @@ mon expertise à travers une interface soignée, des animations fluides et une n
         <p class="certif_desc">
           Connaisance sur le numerique,soft skill , Anglais
         </p>
-        <button class="certif_btn vert" onclick="window.open('certificats/cert.png','_blank')">
+        <button class="certif_btn vert" onclick="window.open('certificats/cert0.png','_blank')">
           <span class="certif_dot"></span> Voir le Certificat
         </button>
       </div>
@@ -549,7 +556,7 @@ mon expertise à travers une interface soignée, des animations fluides et une n
       <div class="certif_body">
         <h3 class="certif_nom cyan">Introduction to Databases with SQL</h3>
         <p class="certif_meta"><strong>Organisation :</strong> Harvard University (CS50)</p>
-        <p class="certif_meta"><strong>Date :</strong> 2026</p>
+        <p class="certif_meta"><strong>Date :</strong> 04 Avril 2026</p>
         <p class="certif_desc">
           Sept problem sets et un projet final couvrant la modélisation de bases de données et le langage SQL.
         </p>
@@ -668,13 +675,31 @@ mon expertise à travers une interface soignée, des animations fluides et une n
 </section>
 <footer class="footer_section">
   <p class="footer_nom">&gt; Mwinyel Cheick Landry SOME</p>
-  <p class="footer_copy">Étudiant en Ingénierie Informatique</p
+  <p class="footer_copy">Étudiant en Ingénierie Informatique</p>
 </footer>
 <script>
 function downloadPDF() {
     // Ouvre le fichier PDF dans un nouvel onglet
     window.open('cv.pdf', '_blank');
 }
+
+// Menu hamburger : ouverture/fermeture au clic/tap uniquement
+const menuBurger = document.getElementById('menuBurger');
+const navElement = document.querySelector('.nav_element');
+
+menuBurger.addEventListener('click', function() {
+	navElement.classList.toggle('menu_ouvert');
+	menuBurger.classList.toggle('actif');
+	menuBurger.setAttribute('aria-expanded', navElement.classList.contains('menu_ouvert'));
+});
+
+navElement.querySelectorAll('a').forEach(function(lien) {
+	lien.addEventListener('click', function() {
+		navElement.classList.remove('menu_ouvert');
+		menuBurger.classList.remove('actif');
+		menuBurger.setAttribute('aria-expanded', 'false');
+	});
+});
 </script>
 </body>
 </html>
