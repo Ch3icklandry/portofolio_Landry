@@ -875,18 +875,7 @@ partie gauche
   box-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
 }
 
-/* Bouton "en cours" (projet 3) désactivé visuellement */
-.btn_projet3 {
-  border-color: #666;
-  color: #888;
-  cursor: not-allowed;
-}
 
-.btn_projet3:hover {
-  background: transparent;
-  color: #888;
-  box-shadow: none;
-}
 
 
 /* ==================== FORMATION & CURSUS ==================== */
