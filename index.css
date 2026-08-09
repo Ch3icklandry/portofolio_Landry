@@ -758,7 +758,7 @@ partie gauche
 }
 
 /* ================= CARTES ================= */
-.projet_1, .projet_2, .projet_3, .projet_4 {
+.projet_1, .projet_2, .projet_3, .projet_4 , .projet_5 {
   position: relative;
   background: #0a0f14;
   border: 1px solid rgba(0, 255, 136, 0.15);
@@ -777,12 +777,14 @@ partie gauche
 .projet_2 { grid-column: 2; grid-row: 1; }
 .projet_3 { grid-column: 1; grid-row: 2; }
 .projet_4 { grid-column: 2; grid-row: 2; }
+.projet_5 { grid-column: 1; grid-row: 3; }
 
 /* Effet de lumière au survol */
 .projet_1:hover,
 .projet_2:hover,
 .projet_3:hover,
-.projet_4:hover {
+.projet_4:hover,
+.projet_5:hover{
   border-color: rgba(0, 255, 136, 0.6);
   box-shadow:
     0 0 15px rgba(0, 255, 136, 0.35),
@@ -792,7 +794,7 @@ partie gauche
 }
 
 /* ================= BADGES ================= */
-.type_projet_1, .type_projet_2, .type_projet_3, .type_projet_4 {
+.type_projet_1, .type_projet_2, .type_projet_3, .type_projet_4, .type_projet_5 {
   justify-self: end;
   align-self: start;
   margin: 24px 24px 0 0;
@@ -810,16 +812,17 @@ partie gauche
 .type_projet_2 { grid-column: 2; grid-row: 1; }
 .type_projet_3 { grid-column: 1; grid-row: 2; }
 .type_projet_4 { grid-column: 2; grid-row: 2; }
+.type_projet_5 { grid-column: 1; grid-row: 3; }
 
 /* ================= TITRES / SOUS-TITRES ================= */
-.titre_projet1, .titre_projet2, .titre_projet3, .titre_projet4 {
+.titre_projet1, .titre_projet2, .titre_projet3, .titre_projet4 , .titre_projet5 {
   color: #fff;
   font-size: 22px;
   font-weight: 700;
   margin-bottom: 6px;
 }
 
-.sous_titre_projet1, .sous_titre_projet2, .sous_titre_projet3, .sous_titre_projet4 {
+.sous_titre_projet1, .sous_titre_projet2, .sous_titre_projet3, .sous_titre_projet4, .sous_titre_projet5 {
   color: #00ff88;
   font-size: 13px;
   margin-bottom: 14px;
@@ -827,13 +830,13 @@ partie gauche
 }
 
 /* ================= LISTES ================= */
-.projet_1 ul, .projet_2 ul, .projet_3 ul, .projet_4 ul {
+.projet_1 ul, .projet_2 ul, .projet_3 ul, .projet_4 ul, .projet_5 ul  {
   list-style: none;
   padding: 0;
   margin: 18px 0;
 }
 
-.projet_1 ul li, .projet_2 ul li, .projet_3 ul li, .projet_4 ul li {
+.projet_1 ul li, .projet_2 ul li, .projet_3 ul li, .projet_4 ul li, .projet_5 ul li {
   position: relative;
   padding-left: 22px;
   margin-bottom: 10px;
@@ -844,7 +847,8 @@ partie gauche
 .projet_1 ul li::before,
 .projet_2 ul li::before,
 .projet_3 ul li::before,
-.projet_4 ul li::before {
+.projet_4 ul li::before,
+.projet_5 ul li::before {
   content: "▶";
   position: absolute;
   left: 0;
@@ -853,7 +857,7 @@ partie gauche
 }
 
 /* ================= BOUTONS ================= */
-.btn_projet1, .btn_projet3, .btn_projet4 {
+.btn_projet1, .btn_projet3, .btn_projet4, .btn_projet5 {
   display: block;
   width: 100%;
   margin-top: 20px;
@@ -869,7 +873,7 @@ partie gauche
   transition: all 0.3s ease;
 }
 
-.btn_projet1:hover, .btn_projet4:hover {
+.btn_projet1:hover, .btn_projet4:hover, .btn_projet5:hover {
   background: #00ff88;
   color: #0a0f14;
   box-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
