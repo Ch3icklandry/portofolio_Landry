@@ -1272,6 +1272,7 @@ partie gauche
 .certif_nom.vert   { color: #00ff88; }
 .certif_nom.cyan   { color: #00cfff; }
 .certif_nom.violet { color: #a78bfa; }
+.certif_nom.rouge { color: #FF0000; }
 
 .certif_meta {
   color: #c5cdd3;
@@ -1319,10 +1320,17 @@ partie gauche
 .certif_btn.vert   { background: #00ff88; }
 .certif_btn.cyan   { background: #00cfff; }
 .certif_btn.violet { background: #a78bfa; }
+.certif_btn.rouge { 
+  background: #ff4d4d; /* ou #ef4444 */
+  color: black;      /* pour un texte blanc bien lisible sur fond rouge */
+}
 
 .certif_btn.vert:hover   { box-shadow: 0 0 20px rgba(0,255,136,0.6); }
 .certif_btn.cyan:hover   { box-shadow: 0 0 20px rgba(0,207,255,0.6); }
 .certif_btn.violet:hover { box-shadow: 0 0 20px rgba(167,139,250,0.6); }
+.certif_btn.rouge:hover { 
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.6); 
+}
 
 /* ==================== CONTACT ==================== */
 
