@@ -497,17 +497,17 @@ partie gauche
 /* ===== Grille des cartes : même hauteur, alignées ===== */
 .conteneur_comp {
     margin-top: 100px;
-    max-width: 1500px;
-    margin-left: auto;
+    max-width: 1400px;
+    margin-left: 100px;
     margin-right: auto;
     padding: 0 40px;
     box-sizing: border-box;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    /* Force exactement 3 colonnes de taille égale */
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
-    align-items: stretch; /* toutes les cartes prennent la même hauteur */
+    align-items: stretch;
 }
-
 
 /* ===== Fond général ===== */
 #Competences {
@@ -1663,6 +1663,7 @@ partie gauche
 
 /* Smartphones et petits écrans (Max 768px) */
 @media (max-width: 768px) {
+	
 	.left_about{
 		position: relative;
 		top: -100px;
@@ -1689,8 +1690,17 @@ partie gauche
 		width: 220px;
 		height: 220px;
 	}
-	.text_haut, .text_bas {
-		position: static;
+	.text_haut{
+		position: relative;
+		top:35px;
+		left:40px;
+		margin: 10px 0;
+		display: inline-block;
+	}
+	.text_bas {
+		position: relative;
+		top:-20px;
+		left:-40px;
 		margin: 10px 0;
 		display: inline-block;
 	}
@@ -1965,4 +1975,169 @@ position:relative;
 	.nav_element a:first-child {
 		display: none;
 	}
+}
+
+/* ============================================================
+   AJOUTS & CORRECTIONS : SECTION COMPÉTENCES
+   ============================================================ */
+
+/* 1. Inclusion des cartes br et ia dans les règles communes */
+.carte_br,
+.carte_prog,
+.carte_dev,
+.carte_bdd,
+.carte_rs,
+.carte_ia {
+    background-color: #0d1117;
+    border: 1px solid #1e2530;
+    border-radius: 16px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    position: relative;
+    top: -100px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Inclusion des listes communes */
+.carte_br ul,
+.carte_prog ul,
+.carte_dev ul,
+.carte_bdd ul,
+.carte_rs ul,
+.carte_ia ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+}
+
+/* Inclusion des puces/lignes */
+.carte_br li,
+.carte_prog li,
+.carte_dev li,
+.carte_bdd li,
+.carte_rs li,
+.carte_ia li {
+    position: relative;
+    margin-bottom: 20px;
+    font-family: 'Courier New', monospace;
+    color: #c9d1d9;
+    font-size: 14px;
+    overflow: hidden;
+    padding-bottom: 6px;
+}
+
+.carte_br li span,
+.carte_prog li span,
+.carte_dev li span,
+.carte_bdd li span,
+.carte_rs li span,
+.carte_ia li span {
+    float: right;
+    font-weight: bold;
+}
+
+/* Piste de la barre de progression (fond sombre) */
+.carte_br li::after,
+.carte_prog li::after,
+.carte_dev li::after,
+.carte_bdd li::after,
+.carte_rs li::after,
+.carte_ia li::after {
+    content: "";
+    display: block;
+    margin-top: 8px;
+    width: 100%;
+    height: 6px;
+    background-color: #1b212c;
+    border-radius: 10px;
+}
+
+/* Remplissage dynamique via la variable HTML --pct */
+.carte_br li::before,
+.carte_prog li::before,
+.carte_dev li::before,
+.carte_bdd li::before,
+.carte_rs li::before,
+.carte_ia li::before {
+    content: "";
+    position: absolute;
+    bottom: 0; /* Alignement corrigé au bas du li */
+    left: 0;
+    height: 6px;
+    width: var(--pct, 0%);
+    border-radius: 10px;
+    z-index: 1;
+}
+
+
+/* 2. Style spécifique : Bureautique (.carte_br) - Thème Jaune/Ambre */
+.carte_br .titre_prog,
+.carte_br li span {
+    color: #f1e05a;
+}
+.carte_br li::before {
+    background: linear-gradient(90deg, #f1e05a, #e3b341);
+}
+.carte_br .icone {
+    background-color: rgba(241, 224, 90, 0.15);
+}
+.carte_br:hover {
+    border-color: #f1e05a;
+    box-shadow: 0 0 20px rgba(241, 224, 90, 0.35);
+    transform: translateY(-4px);
+}
+
+
+/* 3. Style spécifique : IA & Data (.carte_ia) - Thème Rose/Magenta */
+.carte_ia .titre_prog,
+.carte_ia li span {
+    color: #ff7b72;
+}
+.carte_ia li::before {
+    background: linear-gradient(90deg, #ff7b72, #f6851b);
+}
+.carte_ia .icone {
+    background-color: rgba(255, 123, 114, 0.15);
+}
+.carte_ia:hover {
+    border-color: #ff7b72;
+    box-shadow: 0 0 20px rgba(255, 123, 114, 0.35);
+    transform: translateY(-4px);
+}
+
+.carte_bdd,.carte_br,.carte_dev,.carte_ia,.carte_rs,.carte_prog{
+	width: 500px;
+}
+/* 4. Ajustements responsive pour inclure les cartes br et ia */
+@media (max-width: 1250px) {
+    .carte_br,.carte_ia ,.carte_bdd,.carte_prog,.carte_dev,.carte_rs{
+        width: auto;
+		
+    }
+}
+
+@media (max-width: 990px) {
+    .carte_br,.carte_ia ,.carte_bdd,.carte_prog,.carte_dev,.carte_rs{
+        width: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .carte_br,.carte_ia {
+		width: 380px;
+		margin-left:-53px;
+	}
+	.carte_bdd,.carte_prog,.carte_dev,.carte_rs{
+        width: 380px;
+        margin-left:8px;
+}
+
+@media (orientation: landscape) and (max-width: 1024px) {
+    .carte_br,
+    .carte_ia {
+        width: 100%;
+    }
 }
