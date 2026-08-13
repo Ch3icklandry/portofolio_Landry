@@ -6,6 +6,30 @@
 <title>Portfolio de Landry</title>
 <link rel="stylesheet" href="index.css">
 <link rel="icon" type="image/png" href="icone.png">
+<!-- Lien pour les icônes FontAwesome (à mettre dans le <head>) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+
+
+/* --- ALIGNEMENT DES LOGOS DANS LES COMPÉTENCES --- */
+.conteneur_comp li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.conteneur_comp li i {
+    width: 18px;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #4CAF50; /* Tu peux changer la couleur selon ton thème */
+}
+
+.conteneur_comp span {
+    margin-left: auto; /* Aligne les pourcentages (%) à droite */
+}
+</style>
 </head>
 <body>
 <nav class='barre_haute_fixe'>
@@ -27,6 +51,9 @@
 		<a href="#formation">Parcours/Formation</a>
 		<a href="#certification">certifications</a>
 		<a href="#contact">Me contacter</a>
+
+		<!-- Indicateur Glass Liquide -->
+		<div class="glass-indicator"></div>
 	</div>
 </nav>
 <section id="index" class="page-section">
@@ -142,7 +169,7 @@
 		</div>
 		<div class="carte_info">
 			<div class="label_carte">Langues</div>
-			<div class="valeur_carte">Français, Anglais, Moore,Dioula</div>
+			<div class="valeur_carte">Français, Anglais, Moore</div>
 		</div>
 	</div>
 </div>
@@ -150,75 +177,78 @@
 
 </section>
 
-<section id="Competences">
+<section id="Competences" class="page-section">
 <div class="titre_comp">Competences</div>
 <div class="conteneur_comp">
+
 	<div class="carte_br">
-			<div class="titre_prog">Bureautique</div>
-			<ul>
-				<li style="--pct:90%">Word / LibreOffice writter<span id="skill_pt">90%</span></li>
-				<li style="--pct:50%">Excel <span id="skill_xl">50%</span></li>
-				<li style="--pct:70%">Powerpoint <span id="skill_pw">70%</span></li>	
-			</ul>
-		</div>
+		<div class="titre_prog"><i class="fa-solid fa-desktop"></i> Bureautique</div>
+		<ul>
+			<li style="--pct:90%"><i class="fa-solid fa-file-word"></i> Word / Writer <span id="skill_pt">90%</span></li>
+			<li style="--pct:50%"><i class="fa-solid fa-file-excel"></i> Excel <span id="skill_xl">50%</span></li>
+			<li style="--pct:70%"><i class="fa-solid fa-file-powerpoint"></i> Powerpoint <span id="skill_pw">70%</span></li>	
+		</ul>
+	</div>
+
     <div class="carte_prog">
-        <div class="titre_prog">Programmation</div>
+        <div class="titre_prog"><i class="fa-solid fa-code"></i> Programmation</div>
         <ul>
-            <li style="--pct:70%">Langage C <span id="skill_C">70%</span></li>
-			<li style="--pct:40%">C ++ <span id="skill_Cpp">40%</span></li>
-            <li style="--pct:70%">Python <span id="skill_py">70%</span></li>
-            <li style="--pct:50%">Java <span id="skill_java">50%</span></li>
+            <li style="--pct:70%"><i class="fa-solid fa-c"></i> Langage C <span id="skill_C">70%</span></li>
+			<li style="--pct:40%"><i class="fa-solid fa-code"></i> C ++ <span id="skill_Cpp">40%</span></li>
+            <li style="--pct:70%"><i class="fa-brands fa-python"></i> Python <span id="skill_py">70%</span></li>
+            <li style="--pct:50%"><i class="fa-brands fa-java"></i> Java <span id="skill_java">50%</span></li>
         </ul>
     </div>
 
     <div class="carte_dev">
         <div class="titre_prog"><span class="icone">&lt;/&gt;</span> Développement Web</div>
         <ul>
-            <li style="--pct:85%">HTML <span id="skill_html">85%</span></li>
-            <li style="--pct:80%">CSS <span id="skill_css">80%</span></li>
-            <li style="--pct:70%">JavaScript <span id="skill_js">70%</span></li>
-			<li style="--pct:50%">Django <span id="skill_php">50%</span></li>
-            <li style="--pct:50%">PHP <span id="skill_php">50%</span></li>
-            <li style="--pct:50%">React <span id="skill_react">50%</span></li>
-            <li style="--pct:50%">NodeJS / API Rest <span id="skill_node">50%</span></li>
+            <li style="--pct:85%"><i class="fa-brands fa-html5"></i> HTML <span id="skill_html">85%</span></li>
+            <li style="--pct:80%"><i class="fa-brands fa-css3-alt"></i> CSS <span id="skill_css">80%</span></li>
+            <li style="--pct:70%"><i class="fa-brands fa-js"></i> JavaScript <span id="skill_js">70%</span></li>
+			<li style="--pct:50%"><i class="fa-brands fa-python"></i> Django <span id="skill_django">50%</span></li>
+            <li style="--pct:50%"><i class="fa-brands fa-php"></i> PHP <span id="skill_php">50%</span></li>
+            <li style="--pct:50%"><i class="fa-brands fa-react"></i> React <span id="skill_react">50%</span></li>
+            <li style="--pct:50%"><i class="fa-brands fa-node-js"></i> NodeJS / API Rest <span id="skill_node">50%</span></li>
         </ul>
     </div>
 
     <div class="carte_bdd">
-        <div class="titre_prog"></span> Base de données</div>
+        <div class="titre_prog"><i class="fa-solid fa-database"></i> Base de données</div>
         <ul>
-            <li style="--pct:85%">SQL <span id="skill_sql">85%</span></li>
-            <li style="--pct:80%">PostgreSQL <span id="skill_psql">80%</span></li>
-            <li style="--pct:70%">MongoDB <span id="skill_mongo">70%</span></li>
-            <li style="--pct:70%">Supabase <span id="skill_suba">70%</span></li>
+            <li style="--pct:85%"><i class="fa-solid fa-database"></i> SQL <span id="skill_sql">85%</span></li>
+            <li style="--pct:80%"><i class="fa-solid fa-database"></i> PostgreSQL <span id="skill_psql">80%</span></li>
+            <li style="--pct:70%"><i class="fa-solid fa-envira"></i> MongoDB <span id="skill_mongo">70%</span></li>
+            <li style="--pct:70%"><i class="fa-solid fa-bolt"></i> Supabase <span id="skill_suba">70%</span></li>
         </ul>
     </div>
 
     <div class="carte_rs">
-        <div class="titre_prog">Réseaux et Systèmes</div>
+        <div class="titre_prog"><i class="fa-solid fa-network-wired"></i> Réseaux et Systèmes</div>
         <ul>
-            <li style="--pct:95%">Création de réseaux locaux <span id="skill_loc">95%</span></li>
-            <li style="--pct:50%">Sécurisation de réseaux <span id="skill_sec">50%</span></li>
-			<li style="--pct:80%">Routage IP <span id="skill_rout">80%</span></li>
-			<li style="--pct:70%">Deploiment/maintenance de serveur locaux(Apache,samba,dhcp,dns..) <span id="skill_rout">70%</span></li>
-            <li style="--pct:90%">Administration Linux / Windows <span id="skill_admin">90%</span></li>
+            <li style="--pct:95%"><i class="fa-solid fa-sitemap"></i> Création réseaux locaux <span id="skill_loc">95%</span></li>
+            <li style="--pct:50%"><i class="fa-solid fa-shield-halved"></i> Sécurisation réseaux <span id="skill_sec">50%</span></li>
+			<li style="--pct:80%"><i class="fa-solid fa-route"></i> Routage IP <span id="skill_rout">80%</span></li>
+			<li style="--pct:70%"><i class="fa-solid fa-server"></i> Serveurs locaux (Apache, Samba) <span id="skill_serv">70%</span></li>
+            <li style="--pct:90%"><i class="fa-brands fa-linux"></i> Admin Linux / Windows <span id="skill_admin">90%</span></li>
         </ul>
     </div>
 	
 	<div class="carte_ia">
-        <div class="titre_prog">IA et Data(en Apprentissage)</div>
+        <div class="titre_prog"><i class="fa-solid fa-brain"></i> IA et Data</div>
         <ul>
-            <li style="--pct:95%">IA prompting <span id="skill_pt">95%</span></li>
-            <li style="--pct:20%">Machine Learning/Deep Learning <span id="skill_ML">20%</span></li>
-            <li style="--pct:20%">Analyse et Visualisation de Données(panda,Numpy) <span id="skill_an_data">20%</span></li>
-			<li style="--pct:50%">Computer Vision (OpenCV) <span id="skill_cv">50%</span></li>
-			<li style="--pct:20%">Langage R (Data Science) <span id="skill_R">20%</span></li>
-			<li style="--pct:50%">MATLAB (Calcul Scientifique) <span id="skill_MT">50%</span></li>
+            <li style="--pct:95%"><i class="fa-solid fa-robot"></i> IA prompting <span id="skill_pt">95%</span></li>
+            <li style="--pct:20%"><i class="fa-solid fa-diagram-project"></i> Machine / Deep Learning <span id="skill_ML">20%</span></li>
+            <li style="--pct:20%"><i class="fa-solid fa-chart-line"></i> Data (Pandas, Numpy) <span id="skill_an_data">20%</span></li>
+			<li style="--pct:50%"><i class="fa-solid fa-eye"></i> Computer Vision (OpenCV) <span id="skill_cv">50%</span></li>
+			<li style="--pct:20%"><i class="fa-solid fa-r"></i> Langage R <span id="skill_R">20%</span></li>
+			<li style="--pct:50%"><i class="fa-solid fa-calculator"></i> MATLAB <span id="skill_MT">50%</span></li>
         </ul>
     </div>
 
 </div>
 </section>
+
 <section id="projet">
 <div class="titre_projet">Projets</div>
 <div class="conteneur_projet">
@@ -743,52 +773,75 @@ Le modèle permet de contrôler l'ordinateur et de jouer à un jeu vidéo sans c
     <!-- Colonne droite : formulaire -->
     <form class="contact_formulaire" action="https://formsubmit.co/mwinyelcheicklandrysome@gmail.com" method="POST">
       <div class="champ_groupe">
-        <label for="nom">Nom <span class="obligatoire">*</span></label>
-        <input type="text" id="nom" name="nom" placeholder="Votre nom complet" required>
+        <label for="nom">Nom <span class="highlight_vert">*</span></label>
+        <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
       </div>
 
       <div class="champ_groupe">
-        <label for="email">Email <span class="obligatoire">*</span></label>
-        <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+        <label for="email">Email <span class="highlight_vert">*</span></label>
+        <input type="email" id="email" name="email" placeholder="votre.email@exemple.com" required>
       </div>
 
       <div class="champ_groupe">
-        <label for="message">Message <span class="obligatoire">*</span></label>
-        <textarea id="message" name="message" rows="5" placeholder="Décrivez votre projet ou votre message..." required></textarea>
+        <label for="sujet">Sujet</label>
+        <input type="text" id="sujet" name="sujet" placeholder="Sujet de votre message">
       </div>
 
-      <button type="submit" class="btn_envoyer">Envoyer le message</button>
+      <div class="champ_groupe">
+        <label for="message">Message <span class="highlight_vert">*</span></label>
+        <textarea id="message" name="message" rows="5" placeholder="Votre message..." required></textarea>
+      </div>
+
+      <button type="submit" class="btn_envoyer">
+        Envoyer le message
+      </button>
     </form>
 
   </div>
 </section>
+
+<!-- Footer -->
 <footer class="footer_section">
-  <p class="footer_nom">&gt; Mwinyel Cheick Landry SOME</p>
-  <p class="footer_copy">Étudiant en Ingénierie Informatique</p>
+  <div class="footer_nom">SOME Mwinyel Cheick Landry</div>
+  <div class="footer_copy">&copy; 2026 — Tous droits réservés</div>
 </footer>
+
+<!-- Ecran Bloqué / Modal Anomalie -->
+<div class="ecran_bloque" id="ecranBloque">
+  <div>
+    <h2>Anomalie détectée</h2>
+    <p>Accès restreint aux fonctionnalités de la page.</p>
+  </div>
+</div>
+
 <script>
-function downloadPDF() {
-    // Ouvre le fichier PDF dans un nouvel onglet
-    window.open('cv.pdf', '_blank');
-}
+  // Gestion du menu burger pour le responsive
+  const menuBurger = document.getElementById('menuBurger');
+  const navElement = document.querySelector('.nav_element');
 
-// Menu hamburger : ouverture/fermeture au clic/tap uniquement
-const menuBurger = document.getElementById('menuBurger');
-const navElement = document.querySelector('.nav_element');
+  if (menuBurger && navElement) {
+    menuBurger.addEventListener('click', () => {
+      menuBurger.classList.toggle('actif');
+      navElement.classList.toggle('menu_ouvert');
+      
+      const open = menuBurger.classList.contains('actif');
+      menuBurger.setAttribute('aria-expanded', open);
+    });
 
-menuBurger.addEventListener('click', function() {
-	navElement.classList.toggle('menu_ouvert');
-	menuBurger.classList.toggle('actif');
-	menuBurger.setAttribute('aria-expanded', navElement.classList.contains('menu_ouvert'));
-});
+    // Fermeture du menu lors du clic sur un lien
+    document.querySelectorAll('.nav_element a').forEach(link => {
+      link.addEventListener('click', () => {
+        menuBurger.classList.remove('actif');
+        navElement.classList.remove('menu_ouvert');
+        menuBurger.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
 
-navElement.querySelectorAll('a').forEach(function(lien) {
-	lien.addEventListener('click', function() {
-		navElement.classList.remove('menu_ouvert');
-		menuBurger.classList.remove('actif');
-		menuBurger.setAttribute('aria-expanded', 'false');
-	});
-});
+  // Fonction factice de téléchargement de CV
+  function downloadPDF() {
+    alert("Téléchargement du CV en cours...");
+  }
 </script>
 </body>
 </html>
