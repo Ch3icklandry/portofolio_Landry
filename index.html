@@ -76,10 +76,8 @@
 				Landry
 			</div>
 			<div class="prof">
-				(futur)Ingenieur de Travaux en <span class="SI"> Systemes d'Information </span>
-					<br>-  -  -  -<br>
-				<span class="dev">Developpeur Junior</span>
-			</div>
+    <span id="texte_anim"></span><span class="curseur_typewriter">|</span>
+</div>
 			<br>
 			<!--different bouton-->
 			<button class="btn_down_cv" onclick="downloadPDF()" >
@@ -855,6 +853,46 @@ Le modèle permet de contrôler l'ordinateur et de jouer à un jeu vidéo sans c
   function downloadPDF() {
     alert("Téléchargement du CV en cours...");
   }
+
+  // Animation typewriter sur le rôle (about)
+  const phrases = [
+    "Ingénieur de Travaux en Systèmes d'Information",
+    "Développeur Junior",
+    "Passionné d'Intelligence Artificielle, de Programmation et de Réseaux"
+  ];
+
+  let phraseIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  const texteAnim = document.getElementById('texte_anim');
+
+  function typeWriter() {
+    const phraseActuelle = phrases[phraseIndex];
+
+    if (isDeleting) {
+      texteAnim.textContent = phraseActuelle.substring(0, charIndex - 1);
+      charIndex--;
+    } else {
+      texteAnim.textContent = phraseActuelle.substring(0, charIndex + 1);
+      charIndex++;
+    }
+
+    let vitesse = isDeleting ? 30 : 60;
+
+    if (!isDeleting && charIndex === phraseActuelle.length) {
+      vitesse = 1800;
+      isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      phraseIndex = (phraseIndex + 1) % phrases.length;
+      vitesse = 400;
+    }
+
+    setTimeout(typeWriter, vitesse);
+  }
+
+  typeWriter();
 </script>
 </body>
 </html>
