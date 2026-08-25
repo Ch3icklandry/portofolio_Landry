@@ -10,6 +10,7 @@ function downloadPDF() {
   document.body.removeChild(link);
 }
 
+
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ============================================================
@@ -345,3 +346,25 @@ if (document.readyState === 'complete') {
 
 // Secours : force la fermeture après 2.5 secondes si une ressource bloque
 setTimeout(masquerPreloader, 2500);
+function openModal(title, desc, imgSrc) {
+  document.getElementById('modalTitle').textContent = title;
+  document.getElementById('modalDesc').textContent = desc;
+  document.getElementById('modalImg').src = imgSrc;
+  
+  const modal = document.getElementById('certifModal');
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden'; // Empêche le scroll en arrière-plan
+}
+
+function closeModalForce() {
+  const modal = document.getElementById('certifModal');
+  modal.classList.remove('active');
+  document.body.style.overflow = 'auto';
+}
+
+function closeModal(event) {
+  // Ferme la modale uniquement si on clique en dehors du contenu (sur l'overlay)
+  if (event.target.classList.contains('modal_overlay')) {
+    closeModalForce();
+  }
+}
