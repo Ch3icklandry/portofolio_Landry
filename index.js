@@ -1,6 +1,13 @@
 // Téléchargement CV factice (doit rester global pour l'attribut onclick)
 function downloadPDF() {
   alert("Téléchargement du CV en cours...");
+  const link = document.createElement('a');
+  link.href = './cv.pdf'; // Remplace par le nom exact de ton fichier
+  link.download = 'cv.pdf';
+  
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
