@@ -32,6 +32,19 @@
 </style>
 </head>
 <body>
+
+<!-- Préchargeur -->
+<div class="preloader" id="preloader">
+  <div class="preloader_contenu">
+    <span class="preloader_logo">&lt;Landry/&gt;</span>
+    <div class="preloader_barre"><div class="preloader_barre_remplissage"></div></div>
+    <div class="preloader_texte">&gt;&gt;&gt; chargement du profil...</div>
+  </div>
+</div>
+
+<canvas id="particulesBg"></canvas>
+<div class="scroll_progress" id="scrollProgress"></div>
+
 <nav class='barre_haute_fixe'>
 	<div class="identite">
 		<img src="./img/logo.png" alt="Logo" height="30" class="logo">
@@ -57,13 +70,14 @@
 	</div>
 </nav>
 <section id="index" class="page-section">
+	
+
 	<!-- partie a propos-->
 	<!-- partie gauche de a propos-->
 	<div class='about'>
+   
 		<div class='left_about'>
-			<div class="intro">
-				Je suis
-			</div>
+			
 			<br>
 			<div class="ligne_nom">
 				<span class="nom1">SOME</span>
@@ -96,7 +110,9 @@
 		<div class="text_haut">
 			Ingenieur de Travaux
 		</div>
-			<img  class="photo_landry" src="./img/photo.jpg" alt="photo_landry" height="300" >
+			
+				<img  class="photo_landry" src="./img/photo.jpg" alt="photo_landry" height="300" >
+			
 			<div class="text_bas">
 			Developpeur Junior
 		</div>
@@ -235,7 +251,7 @@
 	<div class="carte_ia">
         <div class="titre_prog"><i class="fa-solid fa-brain"></i> IA et Data</div>
         <ul>
-            <li style="--pct:95%"><i class="fa-solid fa-robot"></i> IA prompting <span id="skill_pt">95%</span></li>
+            <li style="--pct:95%"><i class="fa-solid fa-robot"></i> IA prompting <span id="skill_ptia">95%</span></li>
             <li style="--pct:20%"><i class="fa-solid fa-diagram-project"></i> Machine / Deep Learning <span id="skill_ML">20%</span></li>
             <li style="--pct:20%"><i class="fa-solid fa-chart-line"></i> Data (Pandas, Numpy) <span id="skill_an_data">20%</span></li>
 			<li style="--pct:50%"><i class="fa-solid fa-eye"></i> Computer Vision (OpenCV) <span id="skill_cv">50%</span></li>
@@ -250,7 +266,6 @@
 <section id="projet">
 <div class="titre_projet">Projets</div>
 <div class="conteneur_projet">
-<div class="type_projet_1">Académique</div>
 <div class="projet_1">
 <div class="titre_projet1">Bobo tourisme</div>
 <div class="sous_titre_projet1">Site vitrine </div>
@@ -268,7 +283,7 @@ il met en avant la richesse culturelle de la ville de Sya à travers des
 </div>
 
 
-<div class="type_projet_2">Académique</div>
+
 <div class="projet_2">
 <div class="titre_projet2">ESI DA Plateform</div>
 <div class="sous_titre_projet1">Site fullstack</div>
@@ -286,7 +301,6 @@ La plateforme intègre des fonctionnalités intelligentes pour simplifier le sui
 
 </div>
 <div class="projet_3">
-  <div class="type_projet_3">Projet Personnel</div>
   <div class="titre_projet3">MonCachet</div>
   <div class="sous_titre_projet3">Application Web de Tamponnage Dynamique de PDF</div>
   <p>Solution autonome permettant d'apposer automatiquement un cachet personnalisé sur n'importe quel document PDF.</p>
@@ -299,7 +313,7 @@ La plateforme intègre des fonctionnalités intelligentes pour simplifier le sui
 </div>
 
 
-<div class="type_projet_4">Personel</div>
+
 <div class="projet_4">
 <div class="titre_projet4">Portfolio</div>
 <div class="sous_titre_projet4">Site vitrine</div>
@@ -317,7 +331,6 @@ mon expertise à travers une interface soignée, des animations fluides et une n
 <button class="btn_projet1" >Deja sur le site </button>
 </div>
 
-<div class="type_projet_5">Personel</div>
 <div class="projet_5">
 <div class="titre_projet5">Control Gestuel</div>
 <div class="sous_titre_projet5">Machine Learning</div>
@@ -524,23 +537,90 @@ Le modèle permet de contrôler l'ordinateur et de jouer à un jeu vidéo sans c
   <h2 class="certification_titre">Certifications</h2>
 
   <div class="certification_grille">
-	<!-- passeport numerique -->
-		<div class="certif_card">
+
+    <!-- ==================== PROGRAMMATION / DÉVELOPPEMENT ==================== -->
+    <h3 class="certif_categorie_title" style="grid-column: 1 / -1; color: #00cfff; margin: 20px 0 10px; font-family: 'Courier New', monospace;">
+      <i class="fa-solid fa-code"></i> Programmation & Développement
+    </h3>
+
+    <!-- freeCodeCamp Python -->
+    <div class="certif_card">
       <div class="certif_image">
-        <img src="certificats/cert.png" alt="passeport numerique">
+        <img src="certificats/cert4.png" alt="Certificat freeCodeCamp Python">
       </div>
       <div class="certif_body">
-        <h3 class="certif_nom vert">passeport numerique 10.000 codeurs</h3>
-        <p class="certif_meta"><strong>Organisation :</strong> 10.000 codeurs</p>
-        <p class="certif_meta"><strong>Date :</strong> 06 Juin 2026</p>
+        <h3 class="certif_nom cyan">Python Developer Certification</h3>
+        <p class="certif_meta"><strong>Organisation :</strong> freeCodeCamp</p>
+        <p class="certif_meta"><strong>Date :</strong> 25 Février 2026</p>
         <p class="certif_desc">
-          Connaisance sur le numerique,soft skill , Anglais
+          Certification Python représentant environ 300 heures de travail : structures de données, POO et scripts pratiques.
         </p>
-        <button class="certif_btn vert" onclick="window.open('certificats/cert0.png','_blank')">
+        <button class="certif_btn cyan" onclick="window.open('https://freecodecamp.org/certification/slvndry/python-v9','_blank')">
           <span class="certif_dot"></span> Voir le Certificat
         </button>
       </div>
     </div>
+
+    <!-- freeCodeCamp Responsive Web Developer -->
+    <div class="certif_card">
+      <div class="certif_image">
+        <img src="certificats/cert10.png" alt="Certificat freeCodeCamp Web Developer">
+      </div>
+      <div class="certif_body">
+        <h3 class="certif_nom rouge">Responsive Web Developer</h3>
+        <p class="certif_meta"><strong>Organisation :</strong> freeCodeCamp</p>
+        <p class="certif_meta"><strong>Date :</strong> 5 Août 2026</p>
+        <p class="certif_desc">
+          Certification sur le développement web représentant environ 300 heures de travail : HTML, CSS...
+        </p>
+        <button class="certif_btn rouge" onclick="window.open('certificats/cert10.png','_blank')">
+          <span class="certif_dot"></span> Voir le Certificat
+        </button>
+      </div>
+    </div>
+
+    <!-- Meta - Back-End Development -->
+    <div class="certif_card">
+      <div class="certif_image">
+        <img src="certificats/cert11.png" alt="Certificat Meta Back-End">
+      </div>
+      <div class="certif_body">
+        <h3 class="certif_nom rouge">Introduction to Back-End Development</h3>
+        <p class="certif_meta"><strong>Organisation :</strong> Meta - Coursera</p>
+        <p class="certif_meta"><strong>Date :</strong> 17 Août 2026</p>
+        <p class="certif_desc">
+          Bases fondamentales de l'architecture serveur, des API et du développement Web Back-End.
+        </p>
+        <button class="certif_btn rouge" onclick="window.open('certificats/cert11.png','_blank')">
+          <span class="certif_dot"></span> Voir le Certificat
+        </button>
+      </div>
+    </div>
+
+    <!-- CS50 SQL -->
+    <div class="certif_card">
+      <div class="certif_image">
+        <img src="certificats/cert5.png" alt="Certificat CS50 Introduction to Databases with SQL">
+      </div>
+      <div class="certif_body">
+        <h3 class="certif_nom cyan">Introduction to Databases with SQL</h3>
+        <p class="certif_meta"><strong>Organisation :</strong> Harvard University (CS50)</p>
+        <p class="certif_meta"><strong>Date :</strong> 04 Avril 2026</p>
+        <p class="certif_desc">
+          Sept problem sets et un projet final couvrant la modélisation de bases de données et le langage SQL.
+        </p>
+        <button class="certif_btn cyan" onclick="window.open('https://cs50.harvard.edu/certificates/d6b34882-c55c-49d1-8d73-ef7a5b6d52b7','_blank')">
+          <span class="certif_dot"></span> Voir le Certificat
+        </button>
+      </div>
+    </div>
+
+
+    <!-- ==================== RÉSEAUX ==================== -->
+    <h3 class="certif_categorie_title" style="grid-column: 1 / -1; color: #00ff88; margin: 30px 0 10px; font-family: 'Courier New', monospace;">
+      <i class="fa-solid fa-network-wired"></i> Réseaux & IoT
+    </h3>
+
     <!-- Cisco - Équipements réseau -->
     <div class="certif_card">
       <div class="certif_image">
@@ -589,43 +669,55 @@ Le modèle permet de contrôler l'ordinateur et de jouer à un jeu vidéo sans c
         <p class="certif_desc">
           Concepts fondamentaux de l'Internet des Objets et impact de la transformation digitale sur les industries.
         </p>
-        <button class="certif_btn vert" onclick="window.open('cert3.png','_blank')">
+        <button class="certif_btn vert" onclick="window.open('certificats/cert3.png','_blank')">
           <span class="certif_dot"></span> Voir le Certificat
         </button>
       </div>
     </div>
 
-    <!-- freeCodeCamp Python -->
+
+    <!-- ==================== SYSTÈME ==================== -->
+    <h3 class="certif_categorie_title" style="grid-column: 1 / -1; color: #ff4d4d; margin: 30px 0 10px; font-family: 'Courier New', monospace;">
+      <i class="fa-brands fa-linux"></i> Systèmes & Administration
+    </h3>
+
+    <!-- Linux Foundation -->
     <div class="certif_card">
       <div class="certif_image">
-        <img src="certificats/cert4.png" alt="Certificat freeCodeCamp Python">
+        <img src="certificats/cert8.png" alt="Certificat Linux for Developer - The Linux Foundation">
       </div>
       <div class="certif_body">
-        <h3 class="certif_nom cyan">Python Developer Certification</h3>
-        <p class="certif_meta"><strong>Organisation :</strong> freeCodeCamp</p>
-        <p class="certif_meta"><strong>Date :</strong> 25 Février 2026</p>
+        <h3 class="certif_nom rouge">Linux for Developer</h3>
+        <p class="certif_meta"><strong>Organisation :</strong> The Linux Foundation - Coursera</p>
+        <p class="certif_meta"><strong>Date :</strong> 9 Août 2026</p>
         <p class="certif_desc">
-          Certification Python représentant environ 300 heures de travail : structures de données, POO et scripts pratiques.
+          Formation sur l'administration et l'utilisation des systèmes d'exploitation Linux.
         </p>
-        <button class="certif_btn cyan" onclick="window.open('https://freecodecamp.org/certification/slvndry/python-v9','_blank')">
+        <button class="certif_btn rouge" onclick="window.open('certificats/cert8.png','_blank')">
           <span class="certif_dot"></span> Voir le Certificat
         </button>
       </div>
     </div>
 
-    <!-- CS50 SQL -->
+
+    <!-- ==================== DATA & AI ==================== -->
+    <h3 class="certif_categorie_title" style="grid-column: 1 / -1; color: #a78bfa; margin: 30px 0 10px; font-family: 'Courier New', monospace;">
+      <i class="fa-solid fa-brain"></i> Data & Intelligence Artificielle
+    </h3>
+
+    <!-- Cisco - IA Moderne -->
     <div class="certif_card">
       <div class="certif_image">
-        <img src="certificats/cert5.png" alt="Certificat CS50 Introduction to Databases with SQL">
+        <img src="certificats/cert9.png" alt="Certificat Cisco IA">
       </div>
       <div class="certif_body">
-        <h3 class="certif_nom cyan">Introduction to Databases with SQL</h3>
-        <p class="certif_meta"><strong>Organisation :</strong> Harvard University (CS50)</p>
-        <p class="certif_meta"><strong>Date :</strong> 04 Avril 2026</p>
+        <h3 class="certif_nom rouge">Introduction à l'IA moderne</h3>
+        <p class="certif_meta"><strong>Organisation :</strong> Cisco Networking Academy</p>
+        <p class="certif_meta"><strong>Date :</strong> 8 Août 2026</p>
         <p class="certif_desc">
-          Sept problem sets et un projet final couvrant la modélisation de bases de données et le langage SQL.
+          Formation sur les principes et applications de l'IA moderne.
         </p>
-        <button class="certif_btn cyan" onclick="window.open('https://cs50.harvard.edu/certificates/d6b34882-c55c-49d1-8d73-ef7a5b6d52b7','_blank')">
+        <button class="certif_btn rouge" onclick="window.open('certificats/cert9.png','_blank')">
           <span class="certif_dot"></span> Voir le Certificat
         </button>
       </div>
@@ -666,72 +758,30 @@ Le modèle permet de contrôler l'ordinateur et de jouer à un jeu vidéo sans c
         </button>
       </div>
     </div>
-	
-	
-	<div class="certif_card">
-  <div class="certif_image">
-    <img src="certificats/cert8.png" alt="Certificat Linux for Developer - The Linux Foundation">
-  </div>
-  <div class="certif_body">
-    <h3 class="certif_nom rouge">Linux for Developer</h3>
-    <p class="certif_meta"><strong>Organisation :</strong> The Linux Foundation - Coursera</p>
-    <p class="certif_meta"><strong>Date :</strong> 9 Août 2026</p>
-    <p class="certif_desc">
-      Formation sur l'administration de Systèmes d'exploitation Linux
-    </p>
-    <button class="certif_btn rouge" onclick="window.open('certificats/cert8.png','_blank')">
-      <span class="certif_dot"></span> Voir le Certificat
-    </button>
-  </div>
-</div>
-	
-	
-	<div class="certif_card">
-      <div class="certif_image">
-        <img src="certificats/cert9.png" alt="Certificat Linux">
-      </div>
-      <div class="certif_body">
-        <h3 class="certif_nom rouge">Introduction à l'IA moderne</h3>
-        <p class="certif_meta"><strong>Organisation :</strong> Cisco Networking Academy</p>
-        <p class="certif_meta"><strong>Date :</strong> 8 Aout 2026</p>
-        <p class="certif_desc">
-          Formation sur l'IA Moderne.
-        </p>
-        <button class="certif_btn rouge" onclick="window.open('certificats/cert9.png','_blank')">
-          <span class="certif_dot"></span> Voir le Certificat
-        </button>
-      </div>
-    </div>
-	<div class="certif_card">
-      <div class="certif_image">
-        <img src="certificats/cert10.png" alt="Certificat Linux">
-      </div>
-      <div class="certif_body">
-        <h3 class="certif_nom rouge">Responsive Web Developer</h3>
-        <p class="certif_meta"><strong>Organisation :</strong> freeCodeCamp</p>
-        <p class="certif_meta"><strong>Date :</strong> 5 Aout 2026</p>
-        <p class="certif_desc">
-         Certification sur le developpement web représentant environ 300 heures de travail : HTML,css...
-        </p>
-        <button class="certif_btn rouge" onclick="window.open('certificats/cert10.png','_blank')">
-          <span class="certif_dot"></span> Voir le Certificat
-        </button>
-      </div>
-    </div>
+
+
+    <!-- ==================== SOFT SKILLS ==================== -->
+    <h3 class="certif_categorie_title" style="grid-column: 1 / -1; color: #f1e05a; margin: 30px 0 10px; font-family: 'Courier New', monospace;">
+      <i class="fa-solid fa-user-gear"></i> Soft Skills & Général
+    </h3>
+
+    <!-- Passeport numérique -->
     <div class="certif_card">
       <div class="certif_image">
-        <img src="certificats/cert11.png" alt="Certificat meta back">
+        <img src="certificats/cert.png" alt="Passeport numérique">
       </div>
       <div class="certif_body">
-        <h3 class="certif_nom rouge">Introduction to Back-End Development</h3>
-        <p class="certif_meta"><strong>Organisation :</strong> Meta - Coursera</p>
-        <p class="certif_meta"><strong>Date :</strong> 17 Aout 2026</p><br><br><br><br><br><br>
-        <button class="certif_btn rouge" onclick="window.open('certificats/cert11.png','_blank')">
+        <h3 class="certif_nom vert">Passeport numérique 10.000 Codeurs</h3>
+        <p class="certif_meta"><strong>Organisation :</strong> 10.000 Codeurs</p>
+        <p class="certif_meta"><strong>Date :</strong> 06 Juin 2026</p>
+        <p class="certif_desc">
+          Connaissances sur le numérique, Soft Skills et Anglais professionnel.
+        </p>
+        <button class="certif_btn vert" onclick="window.open('certificats/cert0.png','_blank')">
           <span class="certif_dot"></span> Voir le Certificat
         </button>
       </div>
     </div>
-
 
   </div>
 </section>
@@ -825,74 +875,16 @@ Le modèle permet de contrôler l'ordinateur et de jouer à un jeu vidéo sans c
   </div>
 </div>
 
-<script>
-  // Gestion du menu burger pour le responsive
-  const menuBurger = document.getElementById('menuBurger');
-  const navElement = document.querySelector('.nav_element');
+<!-- Lightbox pour les certificats -->
+<div class="lightbox_overlay" id="lightboxOverlay">
+  <img src="" alt="Aperçu du certificat" id="lightboxImage" class="lightbox_image">
+</div>
 
-  if (menuBurger && navElement) {
-    menuBurger.addEventListener('click', () => {
-      menuBurger.classList.toggle('actif');
-      navElement.classList.toggle('menu_ouvert');
-      
-      const open = menuBurger.classList.contains('actif');
-      menuBurger.setAttribute('aria-expanded', open);
-    });
+<!-- Bouton retour en haut -->
+<button id="backToTop" class="back_to_top" aria-label="Retour en haut" title="Retour en haut">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
 
-    // Fermeture du menu lors du clic sur un lien
-    document.querySelectorAll('.nav_element a').forEach(link => {
-      link.addEventListener('click', () => {
-        menuBurger.classList.remove('actif');
-        navElement.classList.remove('menu_ouvert');
-        menuBurger.setAttribute('aria-expanded', 'false');
-      });
-    });
-  }
-
-  // Fonction factice de téléchargement de CV
-  function downloadPDF() {
-    alert("Téléchargement du CV en cours...");
-  }
-
-  // Animation typewriter sur le rôle (about)
-  const phrases = [
-    "Ingénieur de Travaux en Systèmes d'Information",
-    "Développeur Junior",
-    "Passionné d'Intelligence Artificielle, de Programmation et de Réseaux"
-  ];
-
-  let phraseIndex = 0;
-  let charIndex = 0;
-  let isDeleting = false;
-
-  const texteAnim = document.getElementById('texte_anim');
-
-  function typeWriter() {
-    const phraseActuelle = phrases[phraseIndex];
-
-    if (isDeleting) {
-      texteAnim.textContent = phraseActuelle.substring(0, charIndex - 1);
-      charIndex--;
-    } else {
-      texteAnim.textContent = phraseActuelle.substring(0, charIndex + 1);
-      charIndex++;
-    }
-
-    let vitesse = isDeleting ? 30 : 60;
-
-    if (!isDeleting && charIndex === phraseActuelle.length) {
-      vitesse = 1800;
-      isDeleting = true;
-    } else if (isDeleting && charIndex === 0) {
-      isDeleting = false;
-      phraseIndex = (phraseIndex + 1) % phrases.length;
-      vitesse = 400;
-    }
-
-    setTimeout(typeWriter, vitesse);
-  }
-
-  typeWriter();
-</script>
+<script src="index.js"></script>
 </body>
 </html>
